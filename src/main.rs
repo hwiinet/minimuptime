@@ -1,18 +1,9 @@
-use ping::ping;
+use ping::*;
 use std::net::IpAddr;
 use colored::*;
 use std::time::Duration;
 
-fn main() {
-    // collect args and parse them
-    let args: Vec<String> = std::env::args().collect();
-    if args.len() < 2 {
-        println!("Usage: {} <ip>", args[0]);
-        return;
-    }
-    let ip = args[1].parse::<IpAddr>().unwrap(); // Grab IP from args
-    
-    // set required options for ping()
+fn justping(ip: IpAddr) {
     let timeout = Duration::from_secs(1); // Set timeout to 1 second
     let ping_result = ping(ip, Some(timeout), None, None, None, None);
 
@@ -24,5 +15,16 @@ fn main() {
             println!("{}", e.to_string().red().bold());
         }
     }
+}
+
+fn main() {
+    // collect args and parse them
+    let args: Vec<String> = std::env::args().collect();
+    if args.len() < 2 {
+        println!("Usage: {} <ip>", args[0]);
+        return;
+    }
+   
+    justping(args[1].parse().unwrap());
 }
 
