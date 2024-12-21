@@ -20,11 +20,12 @@ fn justping(ip: IpAddr) {
 fn main() {
     // collect args and parse them
     let args: Vec<String> = std::env::args().collect();
+    let ip = args[1].parse().unwrap();
     if args.len() < 2 {
         println!("Usage: {} <ip>", args[0]);
         return;
     }
    
-    justping(args[1].parse().unwrap());
+   justping(ip); 
 }
 
