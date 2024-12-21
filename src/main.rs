@@ -9,10 +9,10 @@ fn justping(ip: IpAddr) {
 
     match ping_result {
         Ok(_ping_result) => {
-            println!("{}", "Device is online".green().bold());
+            println!("[{}] Device is online", ip.to_string().green().bold());
         }
-        Err(e) => {
-            println!("{}", e.to_string().red().bold());
+        Err(_e) => {
+            println!("[{}] Device is offline", ip.to_string().red().bold());
         }
     }
 }
