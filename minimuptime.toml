@@ -1,5 +1,5 @@
 [mmu]
-interval = 3000 # interval time in seconds
+interval = 300 # interval time in seconds
 timeout = 5 # timeout time in seconds
 ipfile = "iplist.txt" # file containing IP addresses to ping
 
