@@ -19,3 +19,5 @@ should do its job without issue.
 
 if you have questions or need support, mail me at null at hwii dot net.
 
+TODO: Rewrite README and add dns and http support
+
