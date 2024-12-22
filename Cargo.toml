@@ -7,4 +7,6 @@ edition = "2021"
 chrono = "0.4.39"
 colored = "2.2.0"
 ping = "0.5.2"
+serde = { version = "1.0.216", features = ["derive"] }
 tokio = { version = "1.42.0", features = ["full"] }
+toml = "0.8.19"
