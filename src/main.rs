@@ -30,7 +30,7 @@ fn justping(ip: IpAddr) {
 async fn main() {
     let args = std::env::args().collect::<Vec<String>>();
     let ipfile: String;
-    let interval = Duration::from_secs(30);
+    let interval = Duration::from_secs(300);
 
     if args.len() == 2 {
         ipfile = std::fs::read_to_string(&args[1]).expect("Failed to read file");
